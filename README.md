@@ -5,6 +5,7 @@
 3. [task 5](#task-5)
 4. [task 8](#task-8)
 5. [task 10](#task-10)
+6. [task 5(tree)](#task-5)
 
 ## task 3
 the code is [in this folder](tasks/3_123.cpp)
@@ -25,3 +26,6 @@ the code is [in this folder](tasks/10_2.cpp)
 
 ## task 12
 the code is [in this folder](tasks/12_1.cpp)
+
+## task 5
+the code is [in this folder](tasks/5_tree.cpp)
