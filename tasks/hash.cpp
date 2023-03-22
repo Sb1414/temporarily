@@ -17,11 +17,13 @@ class HashTable {
   void searchAndCount(char key[]);
   void remove(char key[]);
   void print();
+  int getComparisons();
   int getTotalComparisons();
   bool tableIsEmpty();
 
  private:
   int total_comparisons;
+  int comparisons;
   List *arr[M];
   unsigned int hash(char key[]);
 };
@@ -46,9 +48,8 @@ unsigned int HashTable::hash(char key[]) {
 }
 
 void HashTable::add(char key[], int n) {
-  total_comparisons = 0;
   unsigned int index = hash(key);
-  int comparisons = 0;
+  comparisons = 0;
   List *new_list = new List;
   strcpy(new_list->key, key);
   new_list->num = n;
@@ -68,23 +69,25 @@ void HashTable::add(char key[], int n) {
   total_comparisons += comparisons;
 }
 
+int HashTable::getComparisons() { return comparisons; }
+
 int HashTable::getTotalComparisons() { return total_comparisons; }
 
 void HashTable::searchAndCount(char key[]) {
-  total_comparisons = 0;
+  comparisons = 0;
   unsigned int index = hash(key);
   List *tmp = arr[index];
   while (tmp != nullptr) {
-    total_comparisons++;
+    comparisons++;
     if (strcmp(tmp->key, key) == 0) {
       cout << "Найден ключ " << tmp->key << " с значением " << tmp->num << endl;
-      cout << "Количество сравнений: " << total_comparisons << endl;
+      cout << "Количество сравнений: " << comparisons << endl;
       return;
     }
     tmp = tmp->next;
   }
   cout << "Ключ " << key << " не найден" << endl;
-  cout << "Количество сравнений: " << total_comparisons << endl;
+  cout << "Количество сравнений: " << comparisons << endl;
 }
 
 void HashTable::remove(char key[]) {
@@ -139,7 +142,7 @@ void addKeys(HashTable &table) {
       cout << "\nВведите ключ " << i << ": ";
       cin >> str;
       table.add(str, i);
-      cout << "\nсравнений: " << table.getTotalComparisons();
+      cout << "\nсравнений: " << table.getComparisons();
     }
   }
 }
@@ -162,64 +165,64 @@ void addReadyMadeKeys(HashTable &table) {
   char str[20];
   strcpy(str, "Kalkamanova");
   table.add(str, 1);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Stroyev");
   table.add(str, 2);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Podyomny");
   table.add(str, 3);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Hasymov");
   table.add(str, 4);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Tatishev");
   table.add(str, 5);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Chistovich");
   table.add(str, 6);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Djumayev");
   table.add(str, 7);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Kuznetsov");
   table.add(str, 8);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Lushenko");
   table.add(str, 9);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Onejko");
   table.add(str, 10);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Vinogradova");
   table.add(str, 11);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Lavrova");
   table.add(str, 12);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Allova");
   table.add(str, 13);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Simakova");
   table.add(str, 14);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Lapshin");
   table.add(str, 15);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Bushuyeva");
   table.add(str, 16);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Ilyina");
   table.add(str, 17);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Vorobyov");
   table.add(str, 18);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Vasilyev");
   table.add(str, 19);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   strcpy(str, "Tyurina");
   table.add(str, 20);
-  cout << "\nсравнений: " << table.getTotalComparisons();
+  cout << "\nсравнений: " << table.getComparisons();
   cout << endl;
   table.print();
 }
@@ -232,6 +235,7 @@ void menu() {
        << "4. Поиск заданного ключа в таблице с подсчетом сделанных при этом "
           "сравнений\n"
        << "5. Удаление заданного ключа из таблицы\n"
+       << "6. Всего произведено сравнений при внесении\n"
        << "~~ Для выхода нажмите любую клавишу ~~\n";
 }
 
@@ -274,10 +278,16 @@ int main() {
         deleteKey(table);
         draw();
         break;
+      case 6:
+        draw();
+        cout << "Всего сравнений: " << table.getTotalComparisons() << '\n';
+        draw();
+        break;
       default:
         fl = false;
         break;
     }
   }
+
   return 0;
 }
