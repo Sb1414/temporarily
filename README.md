@@ -6,6 +6,7 @@
 4. [task 8](#task-8)
 5. [task 10](#task-10)
 6. [task 5(tree)](#task-5)
+7. [hash-tables](#hash-tables)
 
 ## task 3
 the code is [in this folder](tasks/3_123.cpp)
@@ -29,3 +30,11 @@ the code is [in this folder](tasks/12_1.cpp)
 
 ## task 5
 the code is [in this folder](tasks/5_tree.cpp)
+
+## hash-tables
+Метод хеш-поиска с разрешением конфликтов методом цепочек.</br>
+Реализовано добавление нового ключа в таблицу с подсчетом сделанных при этом сравнений</br>
+Поиск заданного ключа в таблице с подсчетом сделанных при этом сравнений</br>
+Удаление заданного ключа из таблицы</br>
+Вывод текущего состояния таблицы</br>
+[код тут](tasks/hash.cpp)
