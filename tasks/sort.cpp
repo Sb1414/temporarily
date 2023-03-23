@@ -1,55 +1,54 @@
 #include <chrono>
-#include <iostream>
-#include <vector>
 #include <fstream>
-#include <random> 
+#include <iostream>
+#include <random>
+#include <vector>
 using namespace std;
 
 int insertionSort(vector<int>& arr) {
   int n = arr.size();
   int comparisons = 0;
   for (int i = 1; i < n; ++i) {
-      int key = arr[i];
-      int j = i - 1;
-      while (j >= 0 && arr[j] > key) {
-          arr[j + 1] = arr[j];
-          j--;
-          comparisons++;
-      }
-      arr[j + 1] = key;
+    int key = arr[i];
+    int j = i - 1;
+    while (j >= 0 && arr[j] > key) {
+      arr[j + 1] = arr[j];
+      j--;
+      comparisons++;
+    }
+    arr[j + 1] = key;
   }
   return comparisons;
 }
-
 
 int bubbleSort(vector<int>& arr) {
   int n = arr.size();
   int comparisons = 0;
   for (int i = 0; i < n - 1; ++i) {
-      for (int j = 0; j < n - i - 1; ++j) {
-          if (arr[j] > arr[j + 1]) {
-              swap(arr[j], arr[j + 1]);
-          }
-          comparisons++;
+    for (int j = 0; j < n - i - 1; ++j) {
+      if (arr[j] > arr[j + 1]) {
+        swap(arr[j], arr[j + 1]);
       }
+      comparisons++;
+    }
   }
   return comparisons;
 }
 
-
 void fillNums(int n) {
   const string filename = "numbers.txt";
-  ofstream file(filename); // создаем файл для записи чисел
-  if(file.is_open()) {
-      for(int i = 0; i < n; ++i) {
-          file << rand() % 1000 << " ";
-      }
-      file.close();
+  ofstream file(filename);  // создаем файл для записи чисел
+  if (file.is_open()) {
+    for (int i = 0; i < n; ++i) {
+      file << rand() % 1000 << " ";
+    }
+    file.close();
+  } else {
+    cout << "Файл не был сохранен\n" << endl;
   }
-  else {
-      cout << "Файл не был сохранен\n" << endl;
-  }
-  cout << "\nЧисла сгенерированы и сохранены в файл (для одинакового анализа обоих способов сортировки): " << filename << endl;
+  cout << "\nЧисла сгенерированы и сохранены в файл (для одинакового анализа "
+          "обоих способов сортировки): "
+       << filename << endl;
 }
 
 void fillArray(vector<int>& arr) {
@@ -64,7 +63,7 @@ void fillArray(vector<int>& arr) {
 
 void printArray(const vector<int>& arr) {
   const int n = arr.size();
-  if (arr[0] == 0 && arr[n-1] == 0) {
+  if (arr[0] == 0 && arr[n - 1] == 0) {
     cout << "\nМассив пуст\n";
   } else {
     for (int i = 0; i < n; i++) {
