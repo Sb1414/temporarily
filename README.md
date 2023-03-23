@@ -7,6 +7,7 @@
 5. [task 10](#task-10)
 6. [task 5(tree)](#task-5)
 7. [hash-tables](#hash-tables)
+8. [sorting-methods](#sorting-methods)
 
 ## task 3
 the code is [in this folder](tasks/3_123.cpp)
@@ -38,3 +39,7 @@ the code is [in this folder](tasks/5_tree.cpp)
 Удаление заданного ключа из таблицы</br>
 Вывод текущего состояния таблицы</br>
 [код тут](tasks/hash.cpp)
+
+## sorting-methods
+Метод сортировки вставками и пузырьком с отсчетом затраченного времени и количеством сравнений</br>
+[код тут](tasks/sort.cpp)
