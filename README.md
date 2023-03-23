@@ -8,6 +8,7 @@
 6. [task 5(tree)](#task-5)
 7. [hash-tables](#hash-tables)
 8. [sorting-methods](#sorting-methods)
+9. [quick_sort](#quicksort)
 
 ## task 3
 the code is [in this folder](tasks/3_123.cpp)
@@ -43,3 +44,7 @@ the code is [in this folder](tasks/5_tree.cpp)
 ## sorting-methods
 Метод сортировки вставками и пузырьком с отсчетом затраченного времени и количеством сравнений</br>
 [код тут](tasks/sort.cpp)
+
+## quick_sort
+Метод быстрой сортировки</br>
+[код тут](tasks/quick_sort.cpp)
